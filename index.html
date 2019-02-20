@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Blue Team</title>
+  <style>
+    @-webkit-keyframes rainbow {
+      0% {
+        background-position: 0% 82%;
+      }
+      50% {
+        background-position: 100% 19%;
+      }
+      100% {
+        background-position: 0% 82%;
+      }
+    }
+
+    @-moz-keyframes rainbow {
+      0% {
+        background-position: 0% 82%;
+      }
+      50% {
+        background-position: 100% 19%;
+      }
+      100% {
+        background-position: 0% 82%;
+      }
+    }
+
+    @-o-keyframes rainbow {
+      0% {
+        background-position: 0% 82%;
+      }
+      50% {
+        background-position: 100% 19%;
+      }
+      100% {
+        background-position: 0% 82%;
+      }
+    }
+
+    @keyframes rainbow {
+      0% {
+        background-position: 0% 82%;
+      }
+      50% {
+        background-position: 100% 19%;
+      }
+      100% {
+        background-position: 0% 82%;
+      }
+    }
+
+    @keyframes spaceboots {
+      0% {
+        -webkit-transform: translate(2px, 1px) rotate(0deg);
+      }
+      10% {
+        -webkit-transform: translate(-1px, -2px) rotate(-1deg);
+      }
+      20% {
+        -webkit-transform: translate(-3px, 0px) rotate(1deg);
+      }
+      30% {
+        -webkit-transform: translate(0px, 2px) rotate(0deg);
+      }
+      40% {
+        -webkit-transform: translate(1px, -1px) rotate(1deg);
+      }
+      50% {
+        -webkit-transform: translate(-1px, 2px) rotate(-1deg);
+      }
+      60% {
+        -webkit-transform: translate(-3px, 1px) rotate(0deg);
+      }
+      70% {
+        -webkit-transform: translate(2px, 1px) rotate(-1deg);
+      }
+      80% {
+        -webkit-transform: translate(-1px, -1px) rotate(1deg);
+      }
+      90% {
+        -webkit-transform: translate(2px, 2px) rotate(0deg);
+      }
+      100% {
+        -webkit-transform: translate(1px, -2px) rotate(-1deg);
+      }
+    }
+
+    @-webkit-keyframes spaceboots {
+      0% {
+        -webkit-transform: translate(2px, 1px) rotate(0deg);
+      }
+      10% {
+        -webkit-transform: translate(-1px, -2px) rotate(-1deg);
+      }
+      20% {
+        -webkit-transform: translate(-3px, 0px) rotate(1deg);
+      }
+      30% {
+        -webkit-transform: translate(0px, 2px) rotate(0deg);
+      }
+      40% {
+        -webkit-transform: translate(1px, -1px) rotate(1deg);
+      }
+      50% {
+        -webkit-transform: translate(-1px, 2px) rotate(-1deg);
+      }
+      60% {
+        -webkit-transform: translate(-3px, 1px) rotate(0deg);
+      }
+      70% {
+        -webkit-transform: translate(2px, 1px) rotate(-1deg);
+      }
+      80% {
+        -webkit-transform: translate(-1px, -1px) rotate(1deg);
+      }
+      90% {
+        -webkit-transform: translate(2px, 2px) rotate(0deg);
+      }
+      100% {
+        -webkit-transform: translate(1px, -2px) rotate(-1deg);
+      }
+    }
+
+    body {
+      font-family: Comic Sans MS;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    body .wrapper img:last-of-type {
+      height: calc(100% - 240px);
+    }
+
+    body .wrapper h3 {
+      color: red;
+      text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white
+    }
+
+    body #eryx {
+      mix-blend-mode: difference;
+      filter: invert();
+      position: absolute;
+      z-index: 39;
+    }
+
+    .wrapper {
+      height: 100%;
+      width: 100%;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      position: absolute;
+      background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+      background-size: 1800% 1800%;
+      -webkit-animation: rainbow 18s ease infinite;
+      -z-animation: rainbow 18s ease infinite;
+      -o-animation: rainbow 18s ease infinite;
+      animation: rainbow 18s ease infinite;
+    }
+
+    .btn-wrapper {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 40px;
+      z-index: 45;
+    }
+
+    button {
+      font-family: Comic Sans MS;
+      font-size: 20px;
+      border-radius: 0;
+      mix-blend-mode: difference;
+    }
+
+    #crabbo {
+      opacity: 0;
+      transition: all 0.4s;
+      transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    .crabbo-container {
+      position: absolute;
+      z-index: 40;
+      top: 50%;
+      left: 50%;
+      width: 40%;
+      transform: translateX(-50%) translateY(-50%);
+      width: 90%;
+    }
+
+    .trippy {
+      animation-name: spaceboots;
+      animation-duration: 0.8s;
+      transform-origin: 50% 50%;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+  </style>
+  <script>
+    var domReady = function (callback) {
+      document.readyState === "interactive" ||
+        document.readyState === "complete" ? callback() :
+        document.addEventListener("DOMContentLoaded", callback)
+    }
+    var m = function (e) {
+      var bx = document.getElementById("eryx");
+      bx.style.left = e.pageX + "px";
+      bx.style.top = e.pageY + "px";
+    }
+    domReady(function () {
+      window.onmousemove = m
+    });
+    var crabbo = function () {
+      var crabo = document.getElementById('crabbo');
+      crabo.style.opacity = 1
+      crabo.style.width = '60%';
+      crabo.className = 'trippy';
+    }
+    var stabbo = function () {
+      var stabo = document.getElementById('crabbo');
+      stabo.style.opacity = 0;
+      stabo.style.width = '40%';
+      stabo.className = '';
+    }
+  </script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <img src="/logo.png" width=300px>
+    <h3>Mess with the crabo you get the stabo!</h3>
+    <div class="crabbo-container">
+      <img id="crabbo" src="/stabbo.jpg">
+    </div>
+    <img src="https://i.imgur.com/CMkOOqu.gif">
+    <div class="btn-wrapper">
+      <button onclick="crabbo()">mess with crabbo</button>
+      <button onclick="stabbo()">gets the stabbo</button>
+    </div>
+  </div>
+  <div id="eryx">
+    <h1>Eryx rulz</h1>
+  </div>
+</body>
+
+</html>
